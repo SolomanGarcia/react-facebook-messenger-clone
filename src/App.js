@@ -5,7 +5,7 @@ import Message from "./Message";
 
 function App() {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([{}, {}]);
+  const [messages, setMessages] = useState([]);
   const [username, setUsername] = useState("");
 
   // useState = variable in REACT
