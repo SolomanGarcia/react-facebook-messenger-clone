@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
 import "./App.css";
 import Message from "./Message";
@@ -6,9 +6,14 @@ import Message from "./Message";
 function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [username, setUsername] = useState("");
 
-  console.log(input);
-  console.log(messages);
+  // useState = variable in REACT
+  // useEffect = run code on a condition in REACT
+
+  useEffect(() => {
+    setUsername(prompt("Please enter your name"));
+  }, []);
 
   const sendMessage = (event) => {
     // Logic to send message
@@ -20,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
+      <h2>Welcome {username}</h2>
 
       <form>
         <FormControl>
