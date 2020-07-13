@@ -26,6 +26,7 @@ function App() {
           onChange={(event) => setInput(event.target.value)}
         />
         <Button
+          disabled={!input}
           variant="contained"
           color="primary"
           type="submit"
