@@ -10,6 +10,7 @@ function App() {
 
   const sendMessage = (event) => {
     // Logic to send message
+    event.preventDefault();
     setMessages([...messages, input]);
     setInput("");
   };
