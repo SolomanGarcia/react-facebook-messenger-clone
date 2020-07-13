@@ -20,6 +20,10 @@ function App() {
 
       <input value={input} onChange={(event) => setInput(event.target.value)} />
       <button onClick={sendMessage}>Send Message</button>
+
+      {messages.map((message) => (
+        <p>{message}</p>
+      ))}
     </div>
   );
 }
