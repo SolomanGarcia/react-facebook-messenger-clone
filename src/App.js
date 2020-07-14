@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
 import "./App.css";
 import Message from "./Message";
+import db from "./firebase";
 
 function App() {
   const [input, setInput] = useState("");
@@ -12,13 +13,21 @@ function App() {
   // useEffect = run code on a condition in REACT
 
   useEffect(() => {
+    // Run once when the app component loads
+    // Listening for changes
+    db.collection("messages").onSnapshot((snapshot) => {
+      setMessages(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
+
+  useEffect(() => {
     setUsername(prompt("Please enter your name"));
   }, []);
 
   const sendMessage = (event) => {
     // Logic to send message
     event.preventDefault();
-    setMessages([...messages, { username: username, text: input }]);
+    setMessages([...messages, { username: username, message: input }]);
     setInput("");
   };
 
