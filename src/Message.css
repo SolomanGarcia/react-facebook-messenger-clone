@@ -3,3 +3,9 @@
   margin: 10px;
   width: fit-content;
 }
+
+.message__user {
+  margin-left: auto;
+  color: white;
+  text-align: left !important;
+}
