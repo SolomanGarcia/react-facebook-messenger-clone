@@ -51,7 +51,7 @@ function App() {
       <h1>Hello</h1>
       <h2>Welcome {username}</h2>
 
-      <form>
+      <form className="app__form">
         <FormControl>
           <InputLabel>Enter a message...</InputLabel>
           <Input
